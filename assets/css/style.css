@@ -1,3 +1,125 @@
 body{
-    background:black;
+    background:#4285F4;
+}
+
+img {
+    height: 250px;
+    width: 250px;
+    
+}
+header {
+    width:100%;
+}
+
+#win {
+    border:2px solid teal;
+    
+}
+
+#lose {
+    border:2px solid red;
+}
+
+form{
+    display:flex; 
+}
+
+li{
+    list-style-type: none;
+}
+input{
+    margin-left:10px;
+}
+
+.display-4 {
+    color: white; 
+    font-weight: bolder; 
+}
+
+.lead { 
+    color: white; 
+    font-weight: bolder; 
+}
+
+.btn-dark {
+    justify-content: center; 
+    margin: 10px; 
+    color:  #DB4437;
+    background-color: #F4B400;
+}
+span{
+    color: #4285F4;
+}
+
+span2{
+    color: #DB4437;
+}
+
+span3 {
+    color: #0F9D58;
+}
+span4 {
+    color: #F4B400;
+}
+
+#button-display{
+    padding-left:0px !important;
+    width:100%;
+}
+
+.container { 
+    background: white; 
+    padding: 50px; 
+}
+
+#message{
+    width:100%;
+}
+.card{
+    margin-top:5%;
+    text-align: center;
+    border: none;
+}
+
+.card-title{
+    margin-bottom: 10px;
+}
+
+.timer { 
+    color: black; 
+    float:right;
+    text-align: right;
+    align-content: right;
+    padding:10px; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+
+.highScore{
+    color: black; 
+    float:left;
+    text-align: left;
+    align-content: left;
+    padding: 10px; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+.question-display { 
+    color:black;
+    font-weight: bold; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: 24px;
+}
+
+#resetScores, #goBack, #start, #tryAgain, .answerButton{
+    text-align: center;
+    background: #4B0082;
+    color: white; 
+    border-radius: 5px;
+    width: auto; 
+    margin: 10px ; 
+    padding:5px 15px 5px 15px;
+}
+
+#resetScores, #goBack, #tryAgain, .answerButton{
+    margin: 10px 0px 10px 0px; 
+    
 }
