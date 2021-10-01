@@ -223,4 +223,86 @@ var quizQuestion = {
         $(".highScore").html("Highscore: " + highScore);
     },
 
+// DISPLAY STATS PAGE WITH FINAL COUNTS AND A RESTART
+finalPage: function () {
+    // empty and hide divs
+    $(".question-display").empty();
+    
+    $("#button-display").empty();
+    $(".areYouRight").empty();
+    $(".timer").hide();
+    $(".final-page").show();
+    $("#message").html("<h2>All done!</h2><p>Here are your results:</p>");
+    $("#score").html("Your final score is " + quizQuestion.counter);
+    $("#correct").html("Correct Guesses: " + this.correctGuesses);
+    $("#incorrect").html("Incorrect Guesses: " + this.incorrectGuesses);
+    clearInterval(quizQuestion.countDownTimer);
+},
+highScorePage: function () {
+    // Hide elements on page for highScorePage Element
+    clearInterval(quizQuestion.countDownTimer);
+    
+    $(".card").hide();
+    $(".final-page").hide();
+    $(".timer").hide();
+    $(".timer").html("Time: 60")
+    $(".highScore").hide();
+    $(".question-display").hide();
+    $("#button-display").hide();
+    $(".highScorePage").show();
+    $("#hsArray").show();
+    
+
+    console.log("completed highScore Page");
+
+    //Assign boxValue to equal the submitted initials
+    var boxValue = document.getElementById('userInput').value.toUpperCase().substring(0, 4); 
+    //boxValue = document.getElementById('userInput').value.substring(0, 3);
+    if (boxValue == false){
+        console.log("no value entered for initials:" + boxValue);
+        boxValue = "***";
+    };
+    
+    // Create object to hold high score data
+    var scoreValues = {
+        score: quizQuestion.counter,   // Time left on clock assigned to 
+        initials: boxValue   //The variable hold the initials submitted by the user
+    };
+
+    var MAX_HIGH_SCORES = 5;
+
+    console.log(scoreValues);
+    //Create array to store high scores
+    var highScoresArray = JSON.parse(localStorage.getItem("highScoresArray")) || [];
+    console.log(highScoresArray);
+
+    //add new score to highScoreArray
+    highScoresArray.push(scoreValues);
+    console.log(highScoresArray);
+
+    //sort scores high to low
+    highScoresArray.sort((a, b) => b.score - a.score);
+    console.log(highScoresArray);
+
+    // Narrow to top 5 scores
+    highScoresArray.splice(5);
+
+    //Update local storage with revised highScoresArray
+    localStorage.setItem('highScoresArray', JSON.stringify(highScoresArray));
+    console.log(highScoresArray);
+
+    // Create the list
+    var highScoresList = document.getElementById("#hsArray");
+    var highScores = JSON.parse(localStorage.getItem("highScoresArray")) || [];
+
+        // Use .map to sort out initials and score from the highScoresArray
+        highScoresArray.map(scoreValues => {
+            if(scoreValues.score !=0){
+            console.log(scoreValues.initials + " --- " + scoreValues.score);
+            $("#hsArray").append('<li>' + scoreValues.initials + " --- " + scoreValues.score + '</li>');
+            }
+        });
 }
+}
+
+
