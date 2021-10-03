@@ -37,7 +37,7 @@ JavaScript
 // Questions from https://www.w3schools.com/quiztest/quiztest.asp?qtest=JavaScript
 ## Contribution Guidlines 
 Direct link to site:
-<!--LINK TO PUBLISHED PRODUCT HERE-->
+https://steffb23.github.io/Code-Quiz-Project/index
 https://github.com/SteffB23/Code-Quiz-Project
 ### License
 Copyright(c) 2021 by Stephan Brookens
